@@ -8,5 +8,4 @@
 {% for snack in object_list %}
 <h1><a class="button" href="{% url 'snack_detail' snack.pk %}">{{snack.name}}</a></h1>
 {% endfor %}
-
 {% endblock content %}

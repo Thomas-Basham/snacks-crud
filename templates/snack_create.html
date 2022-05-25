@@ -1,0 +1,30 @@
+{% extends 'snack_list.html' %}
+
+{% block content %}
+
+    <form style="text-align: center; padding: 3vmax;" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="button" type="submit" value="Add To Snacks">
+    </form>
+
+    <style>
+        label{
+            padding: 30px;
+        }
+        input[type=text]{
+            width: calc(100% - 57px);
+            height: 36px;
+            margin: 13px 0 0 -5px;
+            padding-left: 10px;
+            border-radius: 0 5px 5px 0;
+            border: solid 1px #cbc9c9;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            background: #fff;
+        }
+
+        .button:hover {
+            background: chocolate;
+        }
+    </style>
+{% endblock %}

@@ -1,10 +1,13 @@
-{% extends 'base.html' %}
-{% block title %} {{snack.name | title}} {% endblock %}
+{% extends 'snack_list.html' %}
+{% block title %} {{ snack.name | title }} {% endblock %}
 
 {% block content %}
-<div style="text-align: center">
-    <h1>{{snack.name | title}}</h1>
-    <h3>Description: {{snack.description | title}}</h3>
-    <p style="color: cadetblue;">Purchased by: {{snack.purchaser | title}} </p>
-</div>
+    <div style="text-align: center">
+        <h1>{{ snack.name | title }}</h1>
+        <h3>Description: {{ snack.description | title }}</h3>
+        <p style="color: cadetblue;">Purchased by: {{ snack.purchaser | title }} </p>
+
+        <a class="button" href="{% url 'snack_update' snack.pk %}">Update {{ snack.name | title }}</a>
+        <a class="button" href="{% url 'snack_delete' snack.pk %}">Delete {{ snack.name | title }}</a>
+    </div>
 {% endblock content %}
