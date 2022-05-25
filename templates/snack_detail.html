@@ -8,6 +8,6 @@
         <p style="color: cadetblue;">Purchased by: {{ snack.purchaser | title }} </p>
 
         <a class="button" href="{% url 'snack_update' snack.pk %}">Update {{ snack.name | title }}</a>
-        <a class="button" href="{% url 'snack_delete' snack.pk %}">Delete {{ snack.name | title }}</a>
+        <a class="button" style="background-color: orangered" href="{% url 'snack_delete' snack.pk %}">Delete {{ snack.name | title }}</a>
     </div>
 {% endblock content %}

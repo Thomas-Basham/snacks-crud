@@ -5,7 +5,7 @@
 <form style="text-align: center; padding: 3vmax;" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="OK">
+    <input class="button" style="background-color: orangered" type="submit" value="Are You sure?">
 </form>
 
 {% endblock %}

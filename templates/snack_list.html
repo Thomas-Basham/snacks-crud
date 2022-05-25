@@ -3,9 +3,11 @@
 
 {% block content %}
 
-<h1 class="heading">Snacks</h1>
-
-{% for snack in object_list %}
-<h1><a class="button" href="{% url 'snack_detail' snack.pk %}">{{snack.name}}</a></h1>
-{% endfor %}
+    <h1 class="heading">Snacks</h1>
+    {% if object_list.query_set is none %}
+       <h2 style="text-align: center"> <a class="button" href="{% url 'snack_create' %}" > Click Here to Create a Snack to Start Your Snack Collection</a></h2>
+    {% endif %}
+    {% for snack in object_list %}
+        <h1><a class="button" href="{% url 'snack_detail' snack.pk %}">{{ snack.name }}</a></h1>
+    {% endfor %}
 {% endblock content %}
