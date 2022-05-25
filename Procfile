@@ -1,0 +1,1 @@
+web: gunicorn snacks_crud_project.wsgi
